@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#f8f9ff", "surface-container-lowest": "#ffffff", "secondary-fixed-dim": "#b4c5ff", "inverse-on-surface": "#eaf1ff", "surface-tint": "#565e74", "outline-variant": "#c6c6cd", "surface-container-highest": "#d3e4fe", "tertiary-fixed": "#6ffbbe", "surface-bright": "#f8f9ff", "on-tertiary-fixed-variant": "#005236", "error-container": "#ffdad6", "tertiary-container": "#002113", "on-error-container": "#93000a", "tertiary": "#000000", "on-primary": "#ffffff", "primary-fixed-dim": "#bec6e0", "primary-container": "#131b2e", "inverse-primary": "#bec6e0", "on-tertiary-fixed": "#002113", "on-surface-variant": "#45464d", "on-tertiary-container": "#009668", "surface-container-low": "#eff4ff", "on-primary-container": "#7c839b", "tertiary-fixed-dim": "#4edea3", "on-background": "#0b1c30", "on-secondary-fixed-variant": "#003ea8", "on-secondary-fixed": "#00174b", "secondary": "#0051d5", "on-surface": "#0b1c30", "on-tertiary": "#ffffff", "outline": "#76777d", "primary-fixed": "#dae2fd", "inverse-surface": "#213145", "surface-variant": "#d3e4fe", "on-primary-fixed-variant": "#3f465c", "surface": "#f8f9ff", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-primary-fixed": "#131b2e", "secondary-container": "#316bf3", "surface-dim": "#cbdbf5", "on-secondary-container": "#fefcff", "surface-container-high": "#dce9ff", "secondary-fixed": "#dbe1ff", "primary": "#000000", "on-error": "#ffffff", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1.25rem", "space-sm": "0.5rem", "space-xl": "2rem", "margin-desktop": "2rem", "gutter": "1rem", "space-xs": "0.25rem", "space-md": "0.75rem", "gutter-desktop": "1.5rem", "margin": "1rem" }, "fontFamily": { "display-lg-mobile": ["Inter"], "display-lg": ["Inter"], "body-lg": ["Inter"], "body-sm": ["Inter"], "label-tag": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"], "label-numeric": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "label-code": ["JetBrains Mono"] }, "fontSize": { "display-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}], "display-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}], "body-lg": ["15px", {"lineHeight": "22px", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "label-tag": ["11px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600"}], "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "label-numeric": ["14px", {"lineHeight": "18px", "fontWeight": "500"}], "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}], "label-code": ["12px", {"lineHeight": "16px", "fontWeight": "400"}] } } } };</script><link rel="stylesheet" href="pipe-viewer.css"/></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-[18px]">precision_manufacturing</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">PipeMetric <span class="text-secondary font-headline-sm">AI</span></span><span class="font-label-tag text-label-tag text-on-surface-variant uppercase tracking-wider mt-0.5">NDT Vision Metrology</span></div></div><span class="font-label-tag text-label-tag px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-code">v3.8.4</span></div><div class="px-space-md py-space-sm bg-surface-container-low mx-space-md mt-space-sm rounded-lg flex flex-col gap-1"><div class="flex items-center justify-between text-on-surface-variant"><span class="font-label-tag text-label-tag text-on-surface-variant">ACTIVE INSPECTION CELL</span><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim inline-block animate-pulse"></span></div><span class="font-headline-sm text-body-md text-on-surface font-semibold truncate">울산 1공장 2라인</span><span class="font-body-sm text-body-sm text-on-surface-variant truncate">대구경 파이프 제관 (SAW 48")</span></div><div class="px-space-lg pt-space-lg pb-space-xs"><span class="font-label-tag text-label-tag text-on-surface-variant tracking-wider uppercase">ENGINEERING WORKFLOW</span></div><nav class="flex flex-col gap-1 px-space-md" data-active-classes="bg-secondary-container text-on-secondary-container font-semibold rounded-lg"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-all bg-secondary-container text-on-secondary-container font-semibold rounded-lg" data-path="live-inspection" href="index.html"><span class="material-symbols-outlined text-[20px]">radar</span><span class="font-body-md text-body-md">실시간 측정 모니터링</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dimension-tolerance" href="page1.html"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-md text-body-md">치수 적합도 판정 &amp; 분석</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="inspection-reports" href="page2.html"><span class="material-symbols-outlined text-[20px]">description</span><span class="font-body-md text-body-md">검사 보고서 생성 및 이력</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="email-automation" href="page3.html"><span class="material-symbols-outlined text-[20px]">forward_to_inbox</span><span class="font-body-md text-body-md">자동 이메일 발송 설정</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pipe-standards" href="#"><span class="material-symbols-outlined text-[20px]">table_chart</span><span class="font-body-md text-body-md">배관 규격 및 공차 DB 관리</span></a></nav></div><div class="p-space-md flex flex-col gap-space-sm bg-surface-container-lowest"><div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col gap-1.5"><div class="flex items-center justify-between"><span class="font-label-tag text-label-tag text-on-surface-variant">HARDWARE TELEMETRY</span><span class="font-label-code text-label-code text-on-surface font-semibold">100 Hz</span></div><div class="flex items-center justify-between text-body-sm"><span class="font-body-sm text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>3D LiDAR Scan</span><span class="font-label-code text-body-sm text-on-surface font-medium">OK (0.01mm)</span></div><div class="flex items-center justify-between text-body-sm"><span class="font-body-sm text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>Laser Micrometer</span><span class="font-label-code text-body-sm text-secondary font-medium">CALIBRATED</span></div></div><div class="flex items-center justify-between px-space-xs text-on-surface-variant font-body-sm"><span class="font-body-sm text-on-surface-variant">산업 안전 인증 KS Q ISO</span><span class="font-label-code text-body-sm text-on-surface font-semibold">9001:2015</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-1.5 rounded-lg"><span class="material-symbols-outlined text-[18px] text-secondary">domain</span><select class="bg-transparent font-body-md text-body-md text-on-surface font-medium focus:outline-none cursor-pointer pr-space-xs"><option>울산 1공장 - 대구경 파이프 제관 2라인</option><option>포항 2공장 - ERW 심리스 배관 1라인</option><option>당진 특수강관 - 파일럿 검사 라인</option></select></div><div class="hidden xl:flex items-center gap-space-sm pl-space-xs"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-label-code text-label-code"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span>LiDAR 3D 연동 정상</span></div><div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low text-on-surface font-label-code text-label-code"><span class="w-2 h-2 rounded-full bg-secondary-container"></span><span>Laser Micrometer ONLINE</span></div></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute -top-1 -right-1 px-1.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-tag text-[10px] font-bold">3</span></div><div class="h-6 w-[1px] bg-surface-container"></div><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UmuIKM_rIGbEWYPYSHHNCMC6giH33Y8oj9mNe-yzZcdMJx0fpu_ZPnqMYyBr_H2RUCw8JYgeGR30MoiAYnZqDXJKS2Pw-op8bNlf5F3qUEmN7A_P__ORShL8cDMGewNUe1HzlR9vKssRet_h5G28Wy8CWz8sKysk5qi-XaJ5B34LbwRieVHLvQ448QYqbEbEOUZ4lfGTIOLBqc46kfiMSgBsWJWL-wCLAgvWtikBSLh8-JGd45pp4_5gMt"/><div class="flex flex-col text-left"><span class="font-headline-sm text-body-md text-on-surface font-semibold leading-tight">김수현 책임</span><span class="font-body-sm text-body-sm text-on-surface-variant leading-none">품질보증팀 (QA Dept.)</span></div></div></div></header><div class="pt-16 w-full"><section class="w-full bg-surface-container-low px-gutter-desktop py-space-sm shadow-[0_1px_4px_rgba(0,0,0,0.02)] flex flex-wrap items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-wrap"><span class="font-label-tag text-label-tag px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant uppercase font-semibold">Process Innovation HUD</span><div class="flex items-center gap-space-sm text-body-sm text-on-surface-variant"><span class="flex items-center gap-1 font-body-sm line-through text-outline"><span class="material-symbols-outlined text-[16px]">straighten</span>AS-IS 수동 버니어/줄자 실측</span><span class="material-symbols-outlined text-[16px] text-secondary">trending_flat</span><span class="flex items-center gap-1 font-body-sm text-secondary font-semibold bg-surface-container-lowest px-2 py-0.5 rounded shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><span class="material-symbols-outlined text-[16px] text-secondary">auto_awesome</span>TO-BE AI LiDAR 3D 비전 자동 측정 &amp; 전산 보고서 실시간 발송</span></div></div><div class="flex items-center gap-space-md text-body-sm"><div class="flex items-center gap-1 text-on-surface-variant"><span class="font-body-sm">일일 누적 검사:</span><span class="font-label-numeric text-label-numeric text-on-surface font-semibold">1,248 본</span></div><div class="flex items-center gap-1 text-on-surface-variant"><span class="font-body-sm">평균 적합률:</span><span class="font-label-numeric text-label-numeric text-secondary font-bold">99.82%</span></div></div></section></div><main class="relative w-full bg-background px-gutter-desktop py-space-md"><div class="flex flex-col w-full gap-space-md">
+<!-- Top Level KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Card 1: Active Target Spec -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute right-0 top-0 translate-x-3 -translate-y-3 w-20 h-20 bg-secondary-fixed/30 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-tag text-label-tag uppercase tracking-wider text-on-surface-variant flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>현재 측정 대상 LOT
+        </span>
+<span class="font-label-code text-label-code text-secondary bg-surface-container-low px-2 py-0.5 rounded font-semibold">ONLINE CELL 02</span>
+</div>
+<div class="mt-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">12" Sch 40 탄소강관</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">KS D 3562 / ASTM A106 Gr.B</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between bg-surface-container-low p-2 rounded-lg">
+<span class="font-label-tag text-label-tag text-on-surface-variant">LOT IDENTIFIER</span>
+<span class="font-label-numeric text-label-numeric font-bold text-on-surface">#P-202502-0884</span>
+</div>
+</div>
+<!-- Card 2: Cycle Time Benchmark (Innovation) -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-tag text-label-tag uppercase tracking-wider text-on-surface-variant flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span>실시간 단품 측정 사이클
+        </span>
+<span class="font-label-tag text-label-tag bg-tertiary-fixed/30 text-on-tertiary-fixed-variant px-1.5 py-0.5 rounded font-bold">99.8% 단축</span>
+</div>
+<div class="mt-space-sm flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg font-bold text-on-surface font-label-numeric">1.2</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">초 / 본</span>
+</div>
+<div class="mt-space-md flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-1 text-outline">
+<span class="line-through font-label-numeric text-body-sm">수동 15분</span>
+</div>
+<div class="flex items-center gap-1 text-on-tertiary-container font-semibold">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>초고속 3D LiDAR 연산</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Today's Yield & Reject Stats -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-tag text-label-tag uppercase tracking-wider text-on-surface-variant">금일 누적 검사 현황</span>
+<span class="font-label-numeric text-label-code text-on-surface-variant font-medium">합격률 98.81%</span>
+</div>
+<div class="mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-display-lg text-display-lg font-bold text-on-surface font-label-numeric">420</span>
+<span class="font-body-md text-body-md text-on-surface-variant ml-0.5">본 완료</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-code text-label-code text-on-tertiary-container font-semibold">PASS: 415본</span>
+<span class="font-label-code text-label-code text-error font-semibold">REJECT: 5본</span>
+</div>
+</div>
+<!-- Mini Progress Meter Bar -->
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden mt-space-md flex">
+<div class="bg-tertiary-fixed-dim h-full" style="width: 98.8%"></div>
+<div class="bg-error h-full" style="width: 1.2%"></div>
+</div>
+</div>
+<!-- Card 4: Automated Reporting & Dispatch -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-tag text-label-tag uppercase tracking-wider text-on-surface-variant">품질 성적서 자동 배포</span>
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+</div>
+<div class="mt-space-sm flex items-baseline justify-between">
+<div>
+<span class="font-display-lg text-display-lg font-bold text-on-surface font-label-numeric">14</span>
+<span class="font-body-md text-body-md text-on-surface-variant">건 완료</span>
+</div>
+<div class="bg-secondary-fixed/40 text-on-secondary-fixed-variant px-2.5 py-1 rounded-lg text-center">
+<span class="font-label-tag text-label-tag block">전송 대기</span>
+<span class="font-label-numeric text-label-numeric font-bold">1 건</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center justify-between text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-body-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">mark_email_read</span>고객사 ERP 즉시 전송
+        </span>
+<span class="font-label-code text-label-code font-semibold text-on-surface">Auto Sync ON</span>
+</div>
+</div>
+</div>
+<!-- Main Viewport Section (60% Scan Viewport / 40% Telemetry & Actions) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- LEFT 60% (col-span-7 or 8 on desktop): 3D Vision Point Cloud & LiDAR HUD Viewport -->
+<div class="lg:col-span-7 xl:col-span-7 flex flex-col gap-space-md">
+<!-- Interactive pipe metrology viewer; sample data, no hardware connection -->
+<div class="pv-card" id="pipe-viewer">
+  <div class="pv-head">
+    <div><h3 class="pv-heading">LiDAR 파이프 단면 뷰어</h3><div class="pv-subtitle">데모 측정 데이터 · 센서 미연결 · 12″ Sch 40</div></div>
+    <div class="pv-modes" role="group" aria-label="표시 모드">
+      <button type="button" id="view-mode-btn" data-mode="mesh" aria-pressed="true">3D Mesh</button>
+      <button type="button" data-mode="section" aria-pressed="false">Cross Section</button>
+      <button type="button" data-mode="points" aria-pressed="false">Point Cloud</button>
+      <button type="button" id="pv-fullscreen" aria-pressed="false">전체화면</button>
+    </div>
+  </div>
+  <div class="pv-stage" tabindex="0" role="region" aria-label="파이프 모델. 방향키로 회전, 더하기와 빼기로 확대 축소, 0으로 초기화" aria-describedby="pv-help">
+    <svg class="w-full h-full max-h-[380px] drop-shadow-2xl z-0" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" aria-label="파이프 3D 모델과 선택 가능한 측정 지점">
+      <defs><pattern id="pv-grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" class="pv-grid"/></pattern></defs>
+      <rect width="600" height="360" fill="url(#pv-grid)" pointer-events="none"/>
+      <path d="M300 0V360 M0 180H600" class="pv-grid" stroke-dasharray="4 5"/>
+      <g id="pv-scene"></g>
+    </svg>
+    <div class="pv-hud pv-od"><label>외경 OD · 단면 평균</label><strong>323.88</strong><span class="pv-unit">mm</span><small>+0.08</small></div>
+    <div class="pv-hud pv-wt"><label>두께 WT · 단면 평균</label><strong>10.34</strong><span class="pv-unit">mm</span><small>+0.02</small></div>
+    <div class="pv-bottom"><div id="pv-legend" class="pv-legend"><span>두께 10.26</span><i></i><span>10.42 mm</span></div><span id="pv-orientation"></span></div>
+  </div>
+  <div class="pv-toolbar">
+    <div class="pv-tools">
+      <button type="button" id="pv-rotate">단면 90° 회전</button>
+      <button type="button" id="pv-heat" aria-pressed="true">두께 히트맵</button>
+      <button type="button" id="pv-dimensions" aria-pressed="true">치수 가이드</button>
+      <button type="button" id="pv-scan" aria-pressed="false">스캔 재생</button>
+      <button type="button" id="pv-reset">초기화</button>
+    </div>
+    <div class="pv-zoom"><button type="button" id="pv-zoom-out" aria-label="축소">−</button><input type="range" id="pv-zoom" min="65" max="200" step="1" value="100" aria-label="모델 확대 비율"/><output id="pv-zoom-value" for="pv-zoom">100%</output><button type="button" id="pv-zoom-in" aria-label="확대">+</button></div>
+  </div>
+  <div class="pv-inspector" role="status" aria-live="polite" aria-atomic="true">
+    <span class="pv-selected-title">선택 지점 <strong id="pv-selected">060°</strong></span>
+    <span>외경 <strong id="pv-sample-od"></strong></span>
+    <span>두께 <strong id="pv-sample-wt"></strong></span>
+    <span>두께 편차 <strong id="pv-sample-dev"></strong></span>
+  </div>
+  <p class="pv-help" id="pv-help">드래그로 회전 · Ctrl/⌘ + 휠로 확대 · 점을 클릭해 측정값 확인 · 더블클릭으로 초기화</p>
+  <div class="pv-status" id="pv-status" role="status">샘플 12개 · 스캔 대기</div>
+</div>
+<!-- Telemetry Breakdown Table (Standard vs Actual Measured) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">straighten</span>
+<h4 class="font-headline-sm text-body-md font-bold text-on-surface">정밀 6대 치수 측정 데이터 분석표</h4>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant font-medium">단위: mm / %</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container text-on-surface-variant uppercase font-label-tag text-label-tag">
+<th class="py-2.5 px-space-md font-semibold">측정 항목 (Parameter)</th>
+<th class="py-2.5 px-space-sm font-semibold">기준값 (Nominal)</th>
+<th class="py-2.5 px-space-sm font-semibold">측정 실측치 (Actual)</th>
+<th class="py-2.5 px-space-sm font-semibold">오차 편차 (Deviation)</th>
+<th class="py-2.5 px-space-sm font-semibold">허용 공차 (Tolerance)</th>
+<th class="py-2.5 px-space-md text-right font-semibold">판정 (Verdict)</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Item 1: Outer Diameter -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>외경 (Outer Diameter, OD)
+                </td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">323.80</td>
+<td class="py-2.5 px-space-sm font-label-numeric font-bold text-on-surface">323.88</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-tertiary-container font-semibold">+0.08</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">±1.50 mm</td>
+<td class="py-2.5 px-space-md text-right">
+<span class="px-2 py-0.5 rounded font-label-tag text-label-tag bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">적합 [PASS]</span>
+</td>
+</tr>
+<!-- Item 2: Inner Diameter -->
+<tr class="bg-surface-container-low/40 hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>내경 (Inner Diameter, ID)
+                </td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">303.16</td>
+<td class="py-2.5 px-space-sm font-label-numeric font-bold text-on-surface">303.11</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-tertiary-container font-semibold">-0.05</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">±1.50 mm</td>
+<td class="py-2.5 px-space-md text-right">
+<span class="px-2 py-0.5 rounded font-label-tag text-label-tag bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">적합 [PASS]</span>
+</td>
+</tr>
+<!-- Item 3: Wall Thickness -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>벽두께 (Wall Thickness, WT)
+                </td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">10.32</td>
+<td class="py-2.5 px-space-sm font-label-numeric font-bold text-on-surface">10.34</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-tertiary-container font-semibold">+0.02</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">±1.25 mm (-12.5%)</td>
+<td class="py-2.5 px-space-md text-right">
+<span class="px-2 py-0.5 rounded font-label-tag text-label-tag bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">적합 [PASS]</span>
+</td>
+</tr>
+<!-- Item 4: Ovality -->
+<tr class="bg-surface-container-low/40 hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>진원도 (Ovality)
+                </td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">&lt; 0.50%</td>
+<td class="py-2.5 px-space-sm font-label-numeric font-bold text-on-surface">0.18%</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-tertiary-container font-semibold">-0.32%</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">≤ 0.5% (Max-Min)</td>
+<td class="py-2.5 px-space-md text-right">
+<span class="px-2 py-0.5 rounded font-label-tag text-label-tag bg-tertiary-fixed text-on-tertiary-fixed-variant font-bold">우수 [PASS]</span>
+</td>
+</tr>
+<!-- Item 5: Straightness -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span>진직도 (Straightness)
+                </td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">&lt; 2.0 mm/m</td>
+<td class="py-2.5 px-space-sm font-label-numeric font-bold text-on-surface">0.42 mm/m</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-tertiary-container font-semibold">-1.58</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">2.0 mm/m 이하</td>
+<td class="py-2.5 px-space-md text-right">
+<span class="px-2 py-0.5 rounded font-label-tag text-label-tag bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">적합 [PASS]</span>
+</td>
+</tr>
+<!-- Item 6: Total Length -->
+<tr class="bg-surface-container-low/40 hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-space-md font-semibold text-on-surface flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>전장 길이 (Total Length)
+                </td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">6,000.0</td>
+<td class="py-2.5 px-space-sm font-label-numeric font-bold text-on-surface">6,002.1</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-tertiary-container font-semibold">+2.10</td>
+<td class="py-2.5 px-space-sm font-label-numeric text-on-surface-variant">+6.0 / -0.0 mm</td>
+<td class="py-2.5 px-space-md text-right">
+<span class="px-2 py-0.5 rounded font-label-tag text-label-tag bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">적합 [PASS]</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- RIGHT 40% (col-span-5 on desktop): Real-time Verdict, AS-IS vs TO-BE Innovation Card, Actions, & Recent Logs -->
+<div class="lg:col-span-5 xl:col-span-5 flex flex-col gap-space-md">
+<!-- Big Bold Final Verdict Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-tag text-label-tag uppercase tracking-wider text-on-surface-variant">REAL-TIME AI QC VERDICT</span>
+<span class="font-label-code text-label-code text-on-surface-variant">INSP SEQ: #884</span>
+</div>
+<!-- Large Verdict Badge -->
+<div class="w-full bg-tertiary-fixed-dim/20 rounded-xl p-space-md flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim flex items-center justify-center text-on-tertiary-container shadow-sm">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-tag text-label-tag text-on-tertiary-container font-bold uppercase tracking-wider">AI 종합 판정 결과</span>
+<span class="font-display-lg text-display-lg font-bold text-on-tertiary-container leading-none">최종 합격 (PASS)</span>
+</div>
+</div>
+<div class="text-right hidden sm:block">
+<span class="font-label-tag text-label-tag text-on-surface-variant block">신뢰도</span>
+<span class="font-label-numeric text-headline-sm font-bold text-on-surface">99.98%</span>
+</div>
+</div>
+<!-- Quick Summary Metrics Bar -->
+<div class="grid grid-cols-3 gap-space-xs text-center py-1">
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-body-sm text-[11px] text-on-surface-variant block">최대 외경 편차</span>
+<span class="font-label-numeric text-body-md font-bold text-on-surface">+0.08 mm</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-body-sm text-[11px] text-on-surface-variant block">진원도 적합율</span>
+<span class="font-label-numeric text-body-md font-bold text-secondary">0.18 %</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<span class="font-body-sm text-[11px] text-on-surface-variant block">스캔 데이터 포인트</span>
+<span class="font-label-numeric text-body-md font-bold text-on-surface">42,800 pts</span>
+</div>
+</div>
+</div>
+<!-- AS-IS vs TO-BE Innovation Benchmark Comparison Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm relative">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-secondary">transform</span>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">공정 혁신 지표 (Process Impact)</h4>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-tag text-label-tag font-bold">스마트 팩토리 도입</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm mt-1">
+<!-- AS-IS Column -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-tag text-label-tag text-outline uppercase font-bold">AS-IS (기존 수동)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">history</span>
+</div>
+<div class="flex flex-col gap-1.5 text-body-sm">
+<div class="flex items-start gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-error mt-0.5">close</span>
+<span>버니어 &amp; 초음파 수동 측정: <strong class="text-on-surface">15분 소요</strong></span>
+</div>
+<div class="flex items-start gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-error mt-0.5">close</span>
+<span>작업자 수기 기록 오류율: <strong class="text-error">3.2%</strong></span>
+</div>
+<div class="flex items-start gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-error mt-0.5">close</span>
+<span>샘플링 검사 (전수 검사 불가능)</span>
+</div>
+</div>
+</div>
+<!-- TO-BE Column -->
+<div class="bg-surface-container-highest/40 p-space-sm rounded-lg flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-tag text-label-tag text-secondary uppercase font-bold">TO-BE (AI 3D 자동)</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-1.5 text-body-sm">
+<div class="flex items-start gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary mt-0.5">check</span>
+<span>AI 비전 3D LiDAR: <strong class="text-secondary font-label-numeric">1.2초 완료</strong></span>
+</div>
+<div class="flex items-start gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary mt-0.5">check</span>
+<span>측정 분해능 정밀도: <strong class="text-secondary font-label-numeric">0.01mm</strong></span>
+</div>
+<div class="flex items-start gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-secondary mt-0.5">check</span>
+<span>100% 전수 무인 자동 검사</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Trigger Buttons Group -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-tag text-label-tag uppercase tracking-wider text-on-surface-variant">OPERATIONAL ACTIONS</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs">
+<!-- Button 1: Immediate Detailed Report -->
+<button class="bg-primary hover:bg-primary-container text-on-primary py-2.5 px-space-sm rounded-lg flex items-center justify-center gap-1.5 transition-all shadow-sm" id="btn-gen-report">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span class="font-body-sm text-body-sm font-semibold">정밀 성적서 발행</span>
+</button>
+<!-- Button 2: One-click Email Notification -->
+<button class="bg-secondary hover:bg-on-secondary-fixed-variant text-on-secondary py-2.5 px-space-sm rounded-lg flex items-center justify-center gap-1.5 transition-all shadow-sm" id="btn-email-notify">
+<span class="material-symbols-outlined text-[18px]">forward_to_inbox</span>
+<span class="font-body-sm text-body-sm font-semibold">고객사 원클릭 발송</span>
+</button>
+<!-- Button 3: Rescan Trigger -->
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface py-2.5 px-space-sm rounded-lg flex items-center justify-center gap-1.5 transition-all" id="btn-rescan">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span class="font-body-sm text-body-sm font-semibold">단면 재측정 실행</span>
+</button>
+</div>
+</div>
+<!-- Recent Sequential Inspection Logs (10 Items Table) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">list_alt</span>
+<h4 class="font-headline-sm text-body-md font-bold text-on-surface">최근 측정 시퀀스 로그 (Real-time Stream)</h4>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">Live Feed (2025-02-23)</span>
+</div>
+<div class="overflow-x-auto max-h-[260px] overflow-y-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="sticky top-0 bg-surface-container text-on-surface-variant uppercase font-label-tag text-label-tag shadow-sm">
+<tr>
+<th class="py-2 px-space-md">시퀀스</th>
+<th class="py-2 px-space-sm">파이프 일련번호</th>
+<th class="py-2 px-space-sm">규격 명세</th>
+<th class="py-2 px-space-sm">판정</th>
+<th class="py-2 px-space-md text-right">측정시각</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="log-table-body">
+<!-- Row 1: Current active -->
+<tr class="bg-surface-container-highest/20 font-medium">
+<td class="py-2 px-space-md font-label-code text-secondary font-bold">#0884</td>
+<td class="py-2 px-space-sm font-label-numeric text-on-surface">P-2502-0884</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">PASS</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:32:18</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-space-md font-label-code text-on-surface-variant">#0883</td>
+<td class="py-2 px-space-sm font-label-numeric text-on-surface">P-2502-0883</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">PASS</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:31:02</td>
+</tr>
+<!-- Row 3: Warning/Reject -->
+<tr class="hover:bg-surface-container-low bg-error-container/20 transition-colors">
+<td class="py-2 px-space-md font-label-code text-error font-bold">#0882</td>
+<td class="py-2 px-space-sm font-label-numeric text-error font-semibold">P-2502-0882</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-error-container text-on-error-container font-bold">REJECT</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:29:45</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-space-md font-label-code text-on-surface-variant">#0881</td>
+<td class="py-2 px-space-sm font-label-numeric text-on-surface">P-2502-0881</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">PASS</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:28:30</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-space-md font-label-code text-on-surface-variant">#0880</td>
+<td class="py-2 px-space-sm font-label-numeric text-on-surface">P-2502-0880</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">PASS</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:27:12</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-space-md font-label-code text-on-surface-variant">#0879</td>
+<td class="py-2 px-space-sm font-label-numeric text-on-surface">P-2502-0879</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">PASS</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:25:56</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-space-md font-label-code text-on-surface-variant">#0878</td>
+<td class="py-2 px-space-sm font-label-numeric text-on-surface">P-2502-0878</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">PASS</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:24:40</td>
+</tr>
+<!-- Row 8 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-space-md font-label-code text-on-surface-variant">#0877</td>
+<td class="py-2 px-space-sm font-label-numeric text-on-surface">P-2502-0877</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">PASS</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:23:22</td>
+</tr>
+<!-- Row 9 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-space-md font-label-code text-on-surface-variant">#0876</td>
+<td class="py-2 px-space-sm font-label-numeric text-on-surface">P-2502-0876</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">PASS</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:22:05</td>
+</tr>
+<!-- Row 10 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2 px-space-md font-label-code text-on-surface-variant">#0875</td>
+<td class="py-2 px-space-sm font-label-numeric text-on-surface">P-2502-0875</td>
+<td class="py-2 px-space-sm text-on-surface-variant">12" Sch 40</td>
+<td class="py-2 px-space-sm"><span class="px-1.5 py-0.5 rounded text-[10px] bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-bold">PASS</span></td>
+<td class="py-2 px-space-md text-right font-label-code text-on-surface-variant">14:20:49</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-time Modal Mock: Instant Report Generation & Dispatch Popup (Initially Hidden) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden flex items-center justify-center p-gutter" id="report-modal">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-2xl overflow-hidden flex flex-col">
+<!-- Modal Header -->
+<div class="px-space-md py-space-sm bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">verified_user</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">치수 검사 성적서 (Mill Test Certificate) 즉시 발송</h3>
+<span class="font-label-code text-label-code text-on-surface-variant">대상: LOT #P-202502-0884 (KS/ASTM 인증 양식)</span>
+</div>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all" id="close-modal-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body -->
+<div class="p-space-md flex flex-col gap-space-md">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">attachment</span>
+<span class="font-semibold text-on-surface">MTC_Inspection_P-202502-0884.pdf</span>
+<span class="font-label-code text-label-code text-on-surface-variant">(1.84 MB)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-tag text-label-tag font-bold">DIGITAL SIGNED</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tag text-label-tag text-on-surface-variant uppercase">수신 고객사 및 QA 담당자</label>
+<div class="flex items-center gap-2">
+<input class="w-full bg-surface-container-low px-3 py-2 rounded-lg text-body-sm font-body-sm text-on-surface focus:outline-none" readonly="" type="text" value="qa-audit@hyundai-steel.com, plant.eng@daewooenc.com"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-tag text-label-tag text-on-surface-variant uppercase">자동 첨부 항목 옵션</label>
+<div class="grid grid-cols-2 gap-2 text-body-sm">
+<label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-lg cursor-pointer">
+<input checked="" class="accent-secondary w-4 h-4" type="checkbox"/>
+<span>3D LiDAR 단면 오차 히트맵 포함</span>
+</label>
+<label class="flex items-center gap-2 p-2 bg-surface-container-low rounded-lg cursor-pointer">
+<input checked="" class="accent-secondary w-4 h-4" type="checkbox"/>
+<span>진원도 및 진직도 전산 원장 데이터</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-end gap-space-sm">
+<button class="px-4 py-2 rounded-lg text-body-sm font-body-sm text-on-surface-variant hover:bg-surface-container transition-all" id="cancel-modal-btn">취소</button>
+<button class="px-5 py-2 rounded-lg text-body-sm font-body-sm bg-secondary text-on-secondary font-semibold hover:bg-on-secondary-fixed-variant flex items-center gap-1.5 shadow-sm transition-all" id="confirm-dispatch-btn">
+<span class="material-symbols-outlined text-[16px]">send</span>승인 및 즉시 발송
+        </button>
+</div>
+</div>
+</div>
+<script>
+    // Simple inline interactive behaviors for dashboard operational buttons
+    const modal = document.getElementById('report-modal');
+    const openBtn = document.getElementById('btn-email-notify');
+    const openReportBtn = document.getElementById('btn-gen-report');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const cancelBtn = document.getElementById('cancel-modal-btn');
+    const confirmBtn = document.getElementById('confirm-dispatch-btn');
+    const rescanBtn = document.getElementById('btn-rescan');
+
+    function openModal() {
+      modal.classList.remove('hidden');
+    }
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (openReportBtn) openReportBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+    
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', () => {
+        confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> 발송 진행 중...';
+        setTimeout(() => {
+          closeModal();
+          confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">send</span>승인 및 즉시 발송';
+          alert('품질 성적서 및 3D 치수 분석서가 수신처로 성공적으로 발송되었습니다.');
+        }, 800);
+      });
+    }
+
+    if (rescanBtn) {
+      rescanBtn.addEventListener('click', () => {
+        rescanBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">autorenew</span> 스캔 중...';
+        setTimeout(() => {
+          rescanBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">replay</span><span class="font-body-sm text-body-sm font-semibold">단면 재측정 실행</span>';
+        }, 1200);
+      });
+    }
+  </script>
+</div></main></div><script src="pipe-viewer.js"></script></body></html>
